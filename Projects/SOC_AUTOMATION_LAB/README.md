@@ -1,3 +1,4 @@
+## Make sure to check the 'Prerequisites.md' 
 ## This is the day 1 that i am working on this project
 first we have to draw a diagram to map out how we want to build our lab 
 I use draw.io to create a diagram to understand it logically and visually. This will help you to better know how the things that done by you is related to your home lab.
@@ -58,4 +59,29 @@ Real-time threat detection and response
 Reducing mean time to detect (MTTD) and respond (MTTR)
 
 Enhancing SOC efficiency through automation
+
+
+## This is day 2 of my working on this project
+Today I am going to install the required tools and configure my vm.
+These are the main steps i have done today:-
+
+=>Installing *Sysmon* on a Windows 10 virtual machine to capture detailed system activity logs
+
+Installation Process:-
+
+First go to your virtual machine(VM) and go to the website link i am about to give 
+"https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon"-- Download the sysmon.zip file and extract it.Go to the github link and save the configuration .xml file of the sysmon. 
+https://github.com/olafhartong/sysmon-modular/blob/master/sysmonconfig.xml
+
+clone it or download it raw do whatever you want but you need the file.
+
+Now go to the powershell with administrator and locate to the sysmon folder where we unzipped it and save the config file in the unzipped folder and press cd to locate to that folder
+
+After that you have to type in this command to install the sysmon with the downloaded .xml configuration file. 
+
+command:-
+
+.\Sysmon64.exe -i .\sysmonconfig.xml 
+
+After installing check the services by clicking on windows button and go to services and find the sysmon64 to check whether if it is installed or not.
 
