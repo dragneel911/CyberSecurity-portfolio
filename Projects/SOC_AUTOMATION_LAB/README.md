@@ -85,3 +85,55 @@ command:-
 
 After installing check the services by clicking on windows button and go to services and find the sysmon64 to check whether if it is installed or not.
 
+*Install Wazuh Manager on Ubuntu1*
+1. Update System:
+ sudo apt update && sudo apt upgrade -y
+
+2. Download Wazuh Install Script:
+ curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
+
+3. Make Script Executable:
+ chmod +x wazuh-install.sh
+
+4. Run the Installer:
+
+ sudo ./wazuh-install.sh --wazuh-manager
+
+     What It Installs:
+     Wazuh Manager
+    Filebeat (for log forwarding)
+
+ Next Steps After Install:
+
+Access Wazuh UI at: https://<your-ubuntu1-ip>
+
+Install Wazuh agent on Windows 10 VM and point it to your Wazuh server IP.
+
+Connect Wazuh to TheHive later via webhook or script.(This step should done in another ubuntu2 machine)
+
+
+*Install Wazuh Agent on Windows 10*
+ 1. Download the Agent Installer
+https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.3-1.msi ----This will install wazuh agent
+
+2. Install the Agent
+=>Run the .msi installer.
+
+=>Choose “Custom Setup”.
+
+=>In the manager IP field, enter your Ubuntu1 IP (e.g., 192.168.56.101).
+
+=>Keep default port 1514 (UDP) or 1515 (TCP) and agent name (hostname).
+
+3. Configure Agent (Optional via CLI)
+__In the windows powershell__(as Administrator)
+cd "C:\Program Files (x86)\ossec-agent\"
+.\agent-auth.exe -m <WAZUH_SERVER_IP> - in the WAZUH_SERVER_IP type in the ip address of the ubuntu 1 machine
+as we install full wazuh into it.
+
+4. Start the Agent
+
+Go to Services, find Wazuh Agent, and click Start
+Or run: net start wazuh(__in powershell__)
+
+
