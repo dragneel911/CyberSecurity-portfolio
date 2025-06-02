@@ -80,32 +80,32 @@ Now go to the powershell with administrator and locate to the sysmon folder wher
 After that you have to type in this command to install the sysmon with the downloaded .xml configuration file. 
 
  command:-
-
+    ```
      .\Sysmon64.exe -i .\sysmonconfig.xml 
-
+    ```
 After installing check the services by clicking on windows button and go to services and find the sysmon64 to check whether if it is installed or not.
 
 *Install Wazuh Manager on Ubuntu1*
 1. Update System:
  command:-
-
+    ```
      sudo apt update && sudo apt upgrade -y
-
+    ```
 2. Download Wazuh Install Script:
  command:
-
+    ```
      curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
-
+    ```
 3. Make Script Executable:
  command:
-
+    ```
      chmod +x wazuh-install.sh
-
+    ```
 4. Run the Installer:
  command:
-
+   ```
     sudo ./wazuh-install.sh --wazuh-manager
-
+   ```
 What It Installs:
  Wazuh Manager
 Filebeat (for log forwarding)
@@ -136,10 +136,11 @@ Connect Wazuh to TheHive later via webhook or script.(This step should done in a
 __In the windows powershell__(as Administrator)
  command
 
-
+    ```
      cd "C:\Program Files (x86)\ossec-agent\"
 
      .\agent-auth.exe -m <WAZUH_SERVER_IP> - in the WAZUH_SERVER_IP type in the ip address of the ubuntu 1 machine
+     ```
 as we install full wazuh into it.
 
 4. Start the Agent
@@ -147,8 +148,7 @@ as we install full wazuh into it.
 Go to Services, find Wazuh Agent, and click Start
 Or run:
  command:
-
- 
+ ```
      net start wazuh(__in powershell__)
-
+ ```
 
