@@ -79,29 +79,32 @@ Now go to the powershell with administrator and locate to the sysmon folder wher
 
 After that you have to type in this command to install the sysmon with the downloaded .xml configuration file. 
 
-command:-
+ command:-
 
-.\Sysmon64.exe -i .\sysmonconfig.xml 
+     .\Sysmon64.exe -i .\sysmonconfig.xml 
 
 After installing check the services by clicking on windows button and go to services and find the sysmon64 to check whether if it is installed or not.
 
 *Install Wazuh Manager on Ubuntu1*
 1. Update System:
- sudo apt update && sudo apt upgrade -y
+ command:
+     sudo apt update && sudo apt upgrade -y
 
 2. Download Wazuh Install Script:
- curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
+ command:
+     curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
 
 3. Make Script Executable:
- chmod +x wazuh-install.sh
+ command:
+     chmod +x wazuh-install.sh
 
 4. Run the Installer:
+ command:
+    sudo ./wazuh-install.sh --wazuh-manager
 
- sudo ./wazuh-install.sh --wazuh-manager
-
-     What It Installs:
-     Wazuh Manager
-    Filebeat (for log forwarding)
+What It Installs:
+ Wazuh Manager
+Filebeat (for log forwarding)
 
  Next Steps After Install:
 
@@ -114,7 +117,7 @@ Connect Wazuh to TheHive later via webhook or script.(This step should done in a
 
 *Install Wazuh Agent on Windows 10*
  1. Download the Agent Installer
-https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.3-1.msi ----This will install wazuh agent
+ https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.3-1.msi ----This will install wazuh agent
 
 2. Install the Agent
 =>Run the .msi installer.
@@ -127,13 +130,17 @@ https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.3-1.msi ----This will ins
 
 3. Configure Agent (Optional via CLI)
 __In the windows powershell__(as Administrator)
-cd "C:\Program Files (x86)\ossec-agent\"
-.\agent-auth.exe -m <WAZUH_SERVER_IP> - in the WAZUH_SERVER_IP type in the ip address of the ubuntu 1 machine
+ command
+     cd "C:\Program Files (x86)\ossec-agent\"
+
+     .\agent-auth.exe -m <WAZUH_SERVER_IP> - in the WAZUH_SERVER_IP type in the ip address of the ubuntu 1 machine
 as we install full wazuh into it.
 
 4. Start the Agent
 
 Go to Services, find Wazuh Agent, and click Start
-Or run: net start wazuh(__in powershell__)
+Or run:
+ command:
+     net start wazuh(__in powershell__)
 
 
