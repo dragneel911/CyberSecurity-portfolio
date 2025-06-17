@@ -112,7 +112,7 @@ Filebeat (for log forwarding)
 
  Next Steps After Install:
 
-Access Wazuh UI at: https://<your-ubuntu1-ip>
+Access Wazuh UI at: https://<your-ubuntu1-ip>:443
 
 Install Wazuh agent on Windows 10 VM and point it to your Wazuh server IP.
 
@@ -133,7 +133,7 @@ Connect Wazuh to TheHive later via webhook or script.(This step should done in a
 =>Keep default port 1514 (UDP) or 1515 (TCP) and agent name (hostname).
 
 3. Configure Agent (Optional via CLI)
-__In the windows powershell__(as Administrator)
+ __In the windows powershell__(as Administrator)
  command
 
     ```
@@ -141,14 +141,19 @@ __In the windows powershell__(as Administrator)
 
      .\agent-auth.exe -m <WAZUH_SERVER_IP> - in the WAZUH_SERVER_IP type in the ip address of the ubuntu 1 machine
      ```
-as we install full wazuh into it.
+ as we install full wazuh into it.
 
 4. Start the Agent
 
 Go to Services, find Wazuh Agent, and click Start
 Or run:
- command:
- ```
+  command:
+   ```
      net start wazuh(__in powershell__)
- ```
+   ```
+now The wazuh in windows 10 vm is now connected to ubuntu1 machine.You can accesss wazuh dashboard in ubuntu1.
 
+
+## This is day 3 of my working on this project
+Now I am going to set up shuffle which is an SOAR(security, orchestration, automation and response) platform .
+we will now set this up in our ubuntu2 machine using docker.
