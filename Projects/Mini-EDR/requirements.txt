@@ -1,0 +1,6 @@
+psutil
+watchdog
+
+#To install all dependencies later in any system:
+
+#pip install -r requirements.txt
