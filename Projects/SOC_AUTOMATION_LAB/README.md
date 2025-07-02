@@ -153,7 +153,3 @@ Or run:
    ```
 now The wazuh in windows 10 vm is now connected to ubuntu1 machine.You can accesss wazuh dashboard in ubuntu1.
 
-
-## This is day 3 of my working on this project
-Now I am going to set up shuffle which is an SOAR(security, orchestration, automation and response) platform .
-we will now set this up in our ubuntu2 machine using docker.
