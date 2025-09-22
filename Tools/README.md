@@ -1,1 +1,0 @@
-This folder will contain my cybersecurity Tools that I learned and have proficiency about.
